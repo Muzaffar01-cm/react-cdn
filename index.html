@@ -9,25 +9,30 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="root"></div>
+    <div id="root"></div>
 
-
-
-
-
-
-
-   <script type="text/babel">
-    const App = () => {
-        return (
-            <div><h1>My first React COMPONEAT</h1></div>
-       )
-    };
-    const <main> = ReactDOM.createRoot(Document.getElementById("root"))
-    main.render(<App/>)
-   </script>
-     
-
-
+    <script type="text/babel">
+        const App = () => {
+            const title = "Welcome to my website"
+            const subtitle = "this is a website to learing react"
+            const address = "https://github.com/Muzaffar01-cm"
+            const handleClick = () => {
+                console.log("You clicked me ✌")
+                console.log("This is title of my website:",title)
+            }
+            return (
+                <div className="app">
+                    <h1>{title.toUpperCase()}</h1>
+                    <h3>{subtitle}</h3>
+                    <p>today's date is: {new Date().toDateString()}</p>
+                    <p>Random number: {Math.floor(Math.random() * 100 ) + 1 }</p>
+                    <a href={address}>My GitHub accaunt</a>
+                    <button onClick={handleClick}>Click me</button>
+                </div>
+            )
+        };
+        const main = ReactDOM.createRoot(document.getElementById("root"))
+        main.render(<App/>)
+    </script>
 </body>
 </html>
